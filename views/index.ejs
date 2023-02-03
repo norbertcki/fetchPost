@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <input type="text">
+  </body>
+  <script>
+    const data = {imie:'kozak'}
+    const wprowadz = document.querySelector('input')
+    wprowadz.addEventListener('change',() => {
+      const wp = document.querySelector('input').value
+      const obj = {data,wp}
+      fetch('/',{
+      method:'POST',
+      headers:{"content-type": "application/json"},
+      body:JSON.stringify(obj)
+    })
+    })
+    
+  </script>
+</html>
